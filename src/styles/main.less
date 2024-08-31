@@ -1,25 +1,31 @@
 @import "variaveis.less";
+@import "mapas.less";
 
-.marginBottom8{
+@breakpointMobile: ~"(max-width: 768px)";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
+@breakpointDesktop: ~"(min-width: 1024px)";
+
+.marginBottom8 {
     margin-bottom: 8px;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-body{
-    background-color: @corDeFundo;
-    color: @corDosTextos;
+
+body {
+    background-color: @cores[fundo];
+    color: @cores[textos];
 }
 
 li {
     list-style: none;
 }
 
-.container{
+.container {
     max-width: 960px;
     width: 100%;
     margin: 0 auto;
@@ -27,33 +33,33 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
-    @media @breakpointTablet{
-        max-width: 80%;   
+
+    @media @breakpointTablet {
+        max-width: 80%;
     }
 
-    @media @breakpointMobile{
+    @media @breakpointMobile {
         max-width: 70%;
     }
 }
 
-header{
+header {
     padding-bottom: 24px;
-    
-    .profile-avatar{
+
+    .profile-avatar {
         display: block;
         margin: 0 auto 24px;
         border-radius: 60%;
         width: 200px;
         height: 200px;
         object-fit: cover;
-}
     }
-
+}
 
 .profile-bio {
     text-align: center;
-    &-name{
+
+    &-name {
         font-size: 16px;
         .marginBottom8();
     }
@@ -63,47 +69,47 @@ header{
         .marginBottom8();
     }
 
-    &-description{
+    &-description {
         font-size: 14px;
         opacity: 0.8;
     }
 }
 
-.social-links{
+.social-links {
     display: flex;
     justify-content: space-between;
     max-width: 240px;
     width: 100%;
     margin: 0 auto;
-    li{
-        img {
-            transition: all ease .3s;
-            &:hover{
-                transform: scale(1.5);
-            }
+
+    li img {
+        transition: all ease .3s;
+
+        &:hover {
+            transform: scale(1.5);
         }
     }
 }
 
-.projects-list{
+.projects-list {
     margin-top: 32px;
-    &-item{
-        a {
-            text-decoration: none;
-            background-color: @corDosBotoes;
-            display: block;
-            padding: 16px 20px;
-            margin-bottom: 16px;
-            text-align: center;
-            color: @corDosTextos;
-            font-weight: bold;
-            border-radius: 30px;
-            border: 2px solid @corDosBotoes;
-            transition: all ease .5s;
-            &:hover{
-                color: @corDosBotoes;
-                background-color: transparent;
-            }
+
+    &-item a {
+        text-decoration: none;
+        background-color: @cores[botoes];
+        display: block;
+        padding: 16px 20px;
+        margin-bottom: 16px;
+        text-align: center;
+        color: @cores[textos];
+        font-weight: bold;
+        border-radius: 30px;
+        border: 2px solid @cores[botoes];
+        transition: all ease .5s;
+
+        &:hover {
+            color: @cores[botoes];
+            background-color: transparent;
         }
     }
 }
